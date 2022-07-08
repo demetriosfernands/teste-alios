@@ -1,0 +1,13 @@
+:host{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: transparent;
+  height: 40px;
+}
+
+mat-horizontal-stepper {
+  background-color: transparent;
+  height: 40px;
+}

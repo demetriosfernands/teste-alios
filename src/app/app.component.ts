@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'teste-alios';
+
+  cpf:string = '13591682730';
+  showSituacao:boolean = false;
+
+  buscarCPF() {
+
+    this.showSituacao = false;
+
+    if (this.cpf === '13591682730') {
+      this.showSituacao = true;
+    }
+  }
 }

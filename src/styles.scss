@@ -1,1 +1,73 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$ailos-palette: (
+  50: #165C7D,
+  100: #FFA300,
+  200: #009ED0,
+  300: #00C246,
+  400: #007D8A,
+  500: #C13018,
+  600: #FFA300,
+  700: #00C246,
+  800: #009ED0,
+  900: #040F14,
+  A100: #889499,
+  A200: #A7B0B5,
+  A400: #C6CED1,
+  A700: #fff,
+  contrast: (
+    50: #012F44,
+    100: #013F5C,
+    200: #165C7D,
+    300: #457D97,
+    400: #739DB1,
+    500: #739DB1,
+    600: #A2BECB,
+    700: #D0DEE5,
+    800: #E8EFF2,
+    900: #ffffff,
+    A100: #FFB533,
+    A200: #FFC866,
+    A400: #FFDA99,
+    A700: #FFEDCC,
+  )
+);
+
+$alios-primary: mat.define-palette($ailos-palette, 50);
+$alios-accent: mat.define-palette($ailos-palette, A700);
+$alios-warn: mat.define-palette($ailos-palette, 500);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$teste-alios-theme: mat.define-light-theme((
+  color: (
+    primary: $alios-primary,
+    accent: $alios-accent,
+    warn: $alios-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($teste-alios-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.subtitulo {
+  font-size: 14px;
+  color: #868686;
+}
